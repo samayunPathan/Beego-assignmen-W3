@@ -58,7 +58,8 @@ This project implements a web application that interacts with The Cat API using 
 ```bash
 export PATH=$PATH:$HOME/go/bin
 ```
-[For windows go](https://www.golangprograms.com/golang/beego-setup-installation/#:~:text=GOPATH%20is%20a%20folder%20in,be%20set%20to%20%24GOROOT%22.)
+**Windows:**
+Follow the detailed instructions [here](https://www.golangprograms.com/golang/beego-setup-installation/#:~:text=GOPATH%20is%20a%20folder%20in,be%20set%20to%20%24GOROOT%22.)
 
 
 ## Installation
