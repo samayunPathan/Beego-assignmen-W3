@@ -4,59 +4,30 @@ This project implements a web application that interacts with The Cat API using 
 
 
 ## Table of Contents
-
-- [Introduction](#introduction)
 - [Features](#features)
-  - [Voting Section](#voting-section)
-  - [Breeds Section](#breeds-section)
-  - [Favorites Section](#favorites-section)
 - [Prerequisites](#prerequisites)
-   - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-   - [Configuration](#configuration)
-   - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
-  - [The Cat API Base URL](#the-cat-api-base-url)
-  - [Endpoints](#endpoints)
-    - [GET /breeds](#get-breeds)
-    - [GET /random-cat](#get-random-cat)
-    - [GET /breed-images/:breed_id](#get-breed-imagesbreed_id)
-    - [POST /favorite](#post-favorite)
-    - [GET /favorites](#get-favorites)
-    - [DELETE /favorites/delete/:favorite_id](#delete-favoritesdeletefavorite_id)
-    - [POST /vote](#post-vote)
-    - [GET /votes](#get-votes)
 - [Authentication](#authentication)
 - [Project Structure](#project-structure)
 - [API Integration](#api-integration)
 - [Contributing](#contributing)
-- [License](#license)
 ## Features
-### Voting Section
-
+#### Voting Section
 - Displays random cat images fetched from The Cat API.
 - Allows users to upvote or downvote images.
 - Enables users to add images to their favorites.
-
-
-### Breeds Section
-
+#### Breeds Sectio
 - Provides a search bar with breed options fetched from the Breeds API.
 - Displays breed-specific images and information upon selection.
 - Shows breed details including name, origin, and Wikipedia link.
-
-
-### Favorites Section
-
+#### Favorites Section
 - Displays images that users have added to their favorites.
 - Retrieves favorite images from the favorites API.
 - User can remove images from the favorites API.
-
-### Voted Section
-
+#### Voted Section
 - Displays images that users have voted from votes API.
 - Retrieves voted images from the votes API.
-
 
 
 ## Prerequisites
@@ -71,23 +42,22 @@ This project implements a web application that interacts with The Cat API using 
 
 ## Installation
 
-#### Clone the repository:
+#### 1.Clone the repository:
 ``` bash 
 git clone https://github.com/samayunPathan/Beego-assignment-W3.git
 ```
-#### Go project directory
+#### 2.Go project directory
 ``` bash
 cd Beego-assignment-W3
 ```
-#### Install Go dependencies:
+#### 3.Install Go dependencies:
 ```bash
 go mod tidy
 ```
 
 
 
-#### Configuration
-#### Set up your Cat API key in the Beego configuration file.
+#### 4.Configuration
 
 Create a conf/app.conf file in your Beego project root.
 Add your Cat API key to the configuration file:
@@ -100,9 +70,9 @@ catApiKey = "your api key"
 
 ```
 
-#### Running the Application
+#### 5.Running the Application
 
-#### Start the Beego server:
+- Start the Beego server:
 ```bash
 bee run
 ```
@@ -226,5 +196,4 @@ Copycat-api-project/
 The project uses Go channels for API calls to The Cat API. This allows for efficient, concurrent handling of requests.
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
-## License
-This project is licensed under the MIT License.
+
