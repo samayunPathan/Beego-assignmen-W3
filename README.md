@@ -39,6 +39,27 @@ This project implements a web application that interacts with The Cat API using 
 - Backend: Beego
 - Frontend interaction : vanilla JavaScript
 - API: The Cat API
+  #### install beego
+  ```bash
+  go get github.com/beego/beego/v2@v2.0.0
+  ```
+  #### install bee cli tool
+
+```bash
+  go install github.com/beego/bee/v2@latest
+```
+  #### Configuring the PATH for Beego
+  
+**macOS/Linux:**
+
+- Go bin directory: ~/go/bin
+- Add to PATH in ~/.bashrc or ~/.zshrc:
+  
+```bash
+export PATH=$PATH:$HOME/go/bin
+```
+[For windows go](https://www.golangprograms.com/golang/beego-setup-installation/#:~:text=GOPATH%20is%20a%20folder%20in,be%20set%20to%20%24GOROOT%22.)
+
 
 ## Installation
 
