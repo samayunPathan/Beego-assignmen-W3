@@ -73,7 +73,7 @@ This project implements a web application that interacts with The Cat API using 
 
 #### Clone the repository:
 ``` bash 
-git clone https://github.com/samayunPathan/Beego-assignmen-W3.git
+git clone https://github.com/samayunPathan/Beego-assignment-W3.git
 ```
 #### Go project directory
 ``` bash
