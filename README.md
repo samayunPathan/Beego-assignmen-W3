@@ -1,74 +1,206 @@
 
 ## Cat API Project with Beego and JavaScript
-This project implements a web application that interacts with The Cat API using Beego for the backend and JavaScript for frontend interactions. The application features three main sections: Voting, Breeds, and Favorites.
-Features
-
-## Voting Section
-
-- Displays random cat images fetched from The Cat API
-- Allows users to upvote or downvote images
-- Enables users to add images to their favorites
+This project implements a web application that interacts with The Cat API using Beego for the backend and JavaScript for frontend interactions. The application features four main sections: Voting, Breeds, Favorites and Voted.
 
 
-## Breeds Section
+## Table of Contents
 
-- Provides a search bar with breed options fetched from the Breeds API
-- Displays breed-specific images and information upon selection
-- Shows breed details including name, origin, and Wikipedia link
+- [Introduction](#introduction)
+- [Features](#features)
+  - [Voting Section](#voting-section)
+  - [Breeds Section](#breeds-section)
+  - [Favorites Section](#favorites-section)
+- [Prerequisites](#prerequisites)
+   - [Tech Stack](#tech-stack)
+- [Installation](#installation)
+   - [Configuration](#configuration)
+   - [Running the Application](#running-the-application)
+- [API Endpoints](#api-endpoints)
+  - [The Cat API Base URL](#the-cat-api-base-url)
+  - [Endpoints](#endpoints)
+    - [GET /breeds](#get-breeds)
+    - [GET /random-cat](#get-random-cat)
+    - [GET /breed-images/:breed_id](#get-breed-imagesbreed_id)
+    - [POST /favorite](#post-favorite)
+    - [GET /favorites](#get-favorites)
+    - [DELETE /favorites/delete/:favorite_id](#delete-favoritesdeletefavorite_id)
+    - [POST /vote](#post-vote)
+    - [GET /votes](#get-votes)
+- [Authentication](#authentication)
+- [Project Structure](#project-structure)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
+## Features
+### Voting Section
+
+- Displays random cat images fetched from The Cat API.
+- Allows users to upvote or downvote images.
+- Enables users to add images to their favorites.
 
 
-## Favorites Section
+### Breeds Section
 
-- Displays images that users have added to their favorites
-- Retrieves favorite images from the Favorites API
+- Provides a search bar with breed options fetched from the Breeds API.
+- Displays breed-specific images and information upon selection.
+- Shows breed details including name, origin, and Wikipedia link.
+
+
+### Favorites Section
+
+- Displays images that users have added to their favorites.
+- Retrieves favorite images from the favorites API.
+- User can remove images from the favorites API.
+
+### Voted Section
+
+- Displays images that users have voted from votes API.
+- Retrieves voted images from the votes API.
 
 
 
-## Tech Stack
+## Prerequisites
+
+- Go 
+- Beego framework
+#### Tech Stack
 
 - Backend: Beego
 - Frontend interaction : vanilla JavaScript
 - API: The Cat API
 
-## Prerequisites
-
-- Go (version X.X or higher)
-- Beego framework
-
 ## Installation
 
 #### Clone the repository:
 ``` bash 
-git clone https://github.com/samayunPathan/Beego-assignment.git
+git clone https://github.com/samayunPathan/Beego-assignmen-W3.git
 ```
 #### Go project directory
 ``` bash
-cd Beego-assignment
+cd Beego-assignment-W3
 ```
 #### Install Go dependencies:
 ```bash
 go mod tidy
 ```
 
-#### Set up your Cat API key in the Beego configuration file.
 
-Configuration
+
+#### Configuration
+#### Set up your Cat API key in the Beego configuration file.
 
 Create a conf/app.conf file in your Beego project root.
 Add your Cat API key to the configuration file:
 ```bash
-CopycatApiKey = "your_api_key_here"
+appname = cat-api-project
+httpport = 8080
+runmode = dev
+copyrequestbody = true
+catApiKey = "your api key"
+
 ```
 
-## Running the Application
+#### Running the Application
 
 #### Start the Beego server:
 ```bash
 bee run
 ```
-Open your browser and navigate to http://localhost:8080 (or the port specified in your Beego configuration).
+Open your browser and navigate to http://localhost:8080(or the port specified in your Beego configuration).
+
+
+## API Endpoints
+
+#### The Cat API Base URL
+This API interacts with The Cat API. The base URL for The Cat API is:
+
+`https://api.thecatapi.com/v1`
+### Endpoints
+
+### GET /breeds
+
+Fetches all cat breeds
+
+**Response :**  
+- Array of breed objects
+
+
+### GET /random-cat
+
+Fetches a random cat image
+
+**Response:**
+
+- Cat object with image URL
+
+
+### GET /breed-images/:breed_id
+
+Fetches images for a specific breed
+
+**Response:**
+- Array of cat objects with image URLs
+
+
+### POST /favorite
+
+Adds a cat to favorites
+
+** Request body:**
+
+`{"image_id": image_id,
+"sub_id":   "demo-samayun"}`
+
+**Response:**
+- Favorite object
+
+
+### GET /favorites
+
+Fetches all favorited cats
+
+**Response:**
+
+- Array of favorite objects
+
+
+### DELETE /favorites/delete/:favorite_id
+
+Removes a cat from favorites
+
+**Response:**
+- Status code 200 on success
+
+
+### POST /vote
+
+Votes on a cat image
+
+**Request body:**
+
+	`{"image_id":"image_id","sub_id": "demo-samayun","value":voteValue}`
+
+**Response:**
+
+- Vote object
+
+
+### GET /votes
+
+Fetches all votes
+
+**Response:**
+- Array of vote objects or message if no votes found
+
+
+
+## Authentication
+> [!NOTE]
+The Cat API key is managed server-side in this implementation. Requests to The Cat API include the API key as a query parameter or header, depending on the endpoint.
+
+## Project Structure
 ```
-Project Structure
+
 Copycat-api-project/
 ├── conf/
 │   └── app.conf
@@ -81,7 +213,9 @@ Copycat-api-project/
 │   └── router.go
 ├── static/
 │   └── js/
-│       └── main.js
+│   |   └── main.js
+|   └── css/
+│       └── style.css
 ├── views/
 │    └── index.tpl
 │   
