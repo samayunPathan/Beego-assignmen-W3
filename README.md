@@ -76,9 +76,6 @@ cd Beego-assignment-W3
 ```bash
 go mod tidy
 ```
-
-
-
 #### 4.Configuration
 
 Create a conf/app.conf file in your Beego project root.
