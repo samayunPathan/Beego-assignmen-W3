@@ -1,0 +1,5 @@
+appname = cat-api-project
+httpport = 8080
+runmode = dev
+copyrequestbody = true
+catApiKey = "your api key"
